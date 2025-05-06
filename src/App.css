@@ -36,12 +36,12 @@
       display: block;
       overflow-x: auto;
       white-space: nowrap;
-      border-collapse: separate; /* Added for better row spacing */
-      border-spacing: 0 10px; /* Added spacing between rows */
+      border-collapse: separate; 
+      border-spacing: 0 10px; 
     }
   
     th, td {
-      padding: 8px; /* Added padding for better readability */
+      padding: 8px;
     }
   
     button {
@@ -49,6 +49,6 @@
     }
   
     input {
-      font-size: 14px; /* Adjusted input font size for smaller screens */
+      font-size: 14px; 
     }
   }
