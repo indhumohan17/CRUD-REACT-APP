@@ -68,69 +68,87 @@ function App() {
 
   return (
     <>
-      <div className="container">
-        <h1>User Management</h1>
+       <div className="container">
+      <h1 className="text-center mb-4">User Management</h1>
 
-        {/* Create User */}
-        <div className="">
-          <h2>Create User</h2>
-          <input
-            type="text"
-            placeholder="Name"
-            className="m-1"
-            value={newUser.name}
-            onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-             className="m-1"
-            value={newUser.email}
-            onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-          />
-          <input
-            type="number"
-            placeholder="Phone"
-             className="m-1"
-            value={newUser.phone}
-            onChange={(e) => setNewUser({ ...newUser, phone: Number(e.target.value) })}
-          />
-          <button onClick={handleCreate} className="btn btn-success">Add User</button>
-        </div>
-
-        {/* Update User */}
-        {editingUser && (
-          <div>
-            <h2>Edit User</h2>
+      {/* Create User */}
+      <div className="mb-4">
+        <h2>Create User</h2>
+        <div className="row g-2">
+          <div className="col-md-2">
             <input
               type="text"
               placeholder="Name"
-              className='m-1'
-              value={editingUser.name}
-              onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
+              className="form-control"
+              value={newUser.name}
+              onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
             />
+          </div>
+          <div className="col-md-2">
             <input
               type="email"
               placeholder="Email"
-              className='m-1'
-              value={editingUser.email}
-              onChange={(e) => setEditingUser({ ...editingUser, email: e.target.value })}
+              className="form-control"
+              value={newUser.email}
+              onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
             />
+          </div>
+          <div className="col-md-2">
             <input
               type="number"
               placeholder="Phone"
-              className='m-1'
-              value={editingUser.phone}
-              onChange={(e) => setEditingUser({ ...editingUser, phone: Number(e.target.value) })}
+              className="form-control"
+              value={newUser.phone}
+              onChange={(e) => setNewUser({ ...newUser, phone: Number(e.target.value) })}
             />
-            <button onClick={handleUpdate} className="btn btn-warning m-1">Update User</button>
-            <button onClick={() => setEditingUser(null)} className="btn btn-info">Cancel</button>
           </div>
-        )}
+        </div>
+        <button onClick={handleCreate} className="btn btn-primary w-10 mt-3">Add User</button>
+      </div>
 
-        {/* User Table */}
-        <div className="table-responsive">
-        <table className="table table-striped table-bordered table-responsive">
+      {/* Update User */}
+      {editingUser && (
+        <div className="mb-4">
+          <h2>Edit User</h2>
+          <div className="row g-2">
+            <div className="col-md-2">
+              <input
+                type="text"
+                placeholder="Name"
+                className="form-control"
+                value={editingUser.name}
+                onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
+              />
+            </div>
+            <div className="col-md-2">
+              <input
+                type="email"
+                placeholder="Email"
+                className="form-control"
+                value={editingUser.email}
+                onChange={(e) => setEditingUser({ ...editingUser, email: e.target.value })}
+              />
+            </div>
+            <div className="col-md-2">
+              <input
+                type="number"
+                placeholder="Phone"
+                className="form-control"
+                value={editingUser.phone}
+                onChange={(e) => setEditingUser({ ...editingUser, phone: Number(e.target.value) })}
+              />
+            </div>
+          </div>
+          <div className="d-flex justify-content- mt-3">
+            <button onClick={handleUpdate} className="btn btn-warning w-10 me-2">Update User</button>
+            <button onClick={() => setEditingUser(null)} className="btn btn-info w-10">Cancel</button>
+          </div>
+        </div>
+      )}
+
+      {/* User Table */}
+      <div className="table-responsive">
+        <table className="table table-striped table-bordered">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -148,16 +166,15 @@ function App() {
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>
-                  <button onClick={() => setEditingUser(user)} className="btn btn-primary m-1">Edit</button>
-                  <button onClick={() => handleDelete(user.id)} className="btn btn-danger">Delete</button>
+                  <button onClick={() => setEditingUser(user)} className="btn btn-sm btn-primary me-2">Edit</button>
+                  <button onClick={() => handleDelete(user.id)} className="btn btn-sm btn-danger">Delete</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        </div>
-        
       </div>
+    </div>
       <ToastContainer />
     </>
   );

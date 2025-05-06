@@ -27,7 +27,7 @@
   
     button {
       margin-bottom: 10px;
-      width: 100%;
+      
     }
   }
   
@@ -36,9 +36,19 @@
       display: block;
       overflow-x: auto;
       white-space: nowrap;
+      border-collapse: separate; /* Added for better row spacing */
+      border-spacing: 0 10px; /* Added spacing between rows */
+    }
+  
+    th, td {
+      padding: 8px; /* Added padding for better readability */
     }
   
     button {
       font-size: 12px;
+    }
+  
+    input {
+      font-size: 14px; /* Adjusted input font size for smaller screens */
     }
   }
