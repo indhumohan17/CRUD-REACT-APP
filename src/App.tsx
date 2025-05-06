@@ -129,7 +129,8 @@ function App() {
         )}
 
         {/* User Table */}
-        <table className="table">
+        <div className="table-responsive">
+        <table className="table table-striped table-bordered table-responsive">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -154,6 +155,8 @@ function App() {
             ))}
           </tbody>
         </table>
+        </div>
+        
       </div>
       <ToastContainer />
     </>

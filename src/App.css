@@ -1,0 +1,44 @@
+.container {
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  input {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-right: 5px;
+  }
+  @media (max-width: 768px) {
+    .table {
+      font-size: 14px;
+    }
+  
+    input {
+      max-width: 100%;
+    }
+  
+    button {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    button {
+      font-size: 12px;
+    }
+  }
